@@ -74,6 +74,68 @@
 @media(max-width:800px){.portfolio-intro{align-items:stretch;flex-direction:column}.portfolio-stats{grid-template-columns:repeat(2,1fr)}.p360-columns{grid-template-columns:1fr}.p360-detail-grid,.p360-report-cards{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:580px){.pcards{grid-template-columns:1fr}.portfolio-stats,.p360-stats,.p360-detail-grid,.p360-report-cards,.p360-gallery{grid-template-columns:1fr}.p360-hero{flex-direction:column;align-items:flex-start}.p360-summary{text-align:left}.p360-upload-grid{grid-template-columns:1fr}.p360-upload-grid .full{grid-column:auto}}
 
+
+/* ===== POS PMS v0.2 | Auto-collapsing sidebar (desktop/tablet) =====
+   The menu stays compact, expands on hover or keyboard focus,
+   and returns to compact mode when pointer leaves / user selects a page.
+   Phone-sized layouts keep the existing hamburger menu.
+*/
+@media (min-width: 581px) {
+  .sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 76px;
+    height: 100vh;
+    overflow: hidden;
+    z-index: 30;
+    transition: width .22s ease, box-shadow .22s ease;
+    box-shadow: 3px 0 15px rgba(24, 45, 104, .045);
+  }
+  .main { margin-left: 76px; width: calc(100% - 76px); }
+  .sidebar .brand { height: 89px; min-height: 89px; padding: 11px 10px; }
+  .sidebar .brandmark { height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0; }
+  .sidebar .brand-logo-image { display: block; width: 48px; max-width: 100%; height: auto; }
+  .sidebar .brand-name { display: none; }
+  .sidebar .nav { padding: 11px 8px; }
+  .sidebar .nav-label { display: none; }
+  .sidebar .nav-item { justify-content: center; gap: 0; padding: 11px 10px; }
+  .sidebar .nav-item svg { width: 20px; height: 20px; }
+  .sidebar .nav-item span, .sidebar .nav-item .count { display: none; }
+  .sidebar .sidebar-foot { display: none; }
+
+  .sidebar:not(.sidebar-just-selected):is(:hover, :focus-within) {
+    width: 260px;
+    overflow: hidden;
+    box-shadow: 9px 0 32px rgba(20, 49, 105, .16);
+  }
+  .sidebar:not(.sidebar-just-selected):is(:hover, :focus-within) .brand { padding: 11px 12px; }
+  .sidebar:not(.sidebar-just-selected):is(:hover, :focus-within) .brandmark {
+    flex-direction: row; justify-content: flex-start; gap: 11px;
+  }
+  .sidebar:not(.sidebar-just-selected):is(:hover, :focus-within) .brand-logo-image {
+    width: 75px; max-width: 75px;
+  }
+  .sidebar:not(.sidebar-just-selected):is(:hover, :focus-within) .brand-name {
+    display: block; width: auto; flex: 1; min-width: 0;
+    border-top: none; border-left: 1px solid #dbe4ef;
+    padding: 0 0 0 10px; text-align: left;
+    font-size: 9px; line-height: 1.45;
+  }
+  .sidebar:not(.sidebar-just-selected):is(:hover, :focus-within) .brand-name strong { font-size: 12px; }
+  .sidebar:not(.sidebar-just-selected):is(:hover, :focus-within) .nav { padding: 11px 10px; }
+  .sidebar:not(.sidebar-just-selected):is(:hover, :focus-within) .nav-label { display: block; }
+  .sidebar:not(.sidebar-just-selected):is(:hover, :focus-within) .nav-item {
+    justify-content: flex-start; gap: 12px; padding: 11px 12px;
+  }
+  .sidebar:not(.sidebar-just-selected):is(:hover, :focus-within) .nav-item span,
+  .sidebar:not(.sidebar-just-selected):is(:hover, :focus-within) .nav-item .count { display: inline; }
+  .sidebar:not(.sidebar-just-selected):is(:hover, :focus-within) .sidebar-foot { display: block; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .sidebar { transition: none; }
+}
+/* ===== End auto-collapsing sidebar ===== */
 </style>
 </head>
 <body><div class="app">
@@ -254,5 +316,21 @@ function downloadFieldEvidence(id){let r=[...DB.fieldRequests,...DB.pmsRecords].
 function viewRecord(id){let r=DB.pmsRecords.find(x=>x.id===id);if(!r)return;let isImage=r.evidence?.type?.startsWith('image/');modal(`<div><div class="eyebrow">PROJECT RECORD · ${escapeHtml(r.type.toUpperCase())}</div><h3>${escapeHtml(r.title)}</h3></div>`,`<div class="detail-stack"><div><span>Project</span><strong>${escapeHtml(projectBy(r.projectId).name)}</strong></div><div><span>Workpack</span><strong>${escapeHtml(r.workpackId||'General')}</strong></div><div><span>Department</span><strong>${escapeHtml(r.department||'—')}</strong></div><div><span>Location</span><strong>${escapeHtml(r.location||'—')}</strong></div><div><span>Date</span><strong>${escapeHtml(r.date)}</strong></div><div><span>Reference</span><strong>${escapeHtml(r.value||'—')}</strong></div></div>${isImage?`<img src="${r.evidence.data}" style="max-width:100%;max-height:300px;object-fit:contain;margin-top:16px" alt="${escapeAttr(r.title)}">`:''}<p class="helpbox" style="margin-top:15px">${escapeHtml(r.notes||'Không có ghi chú')}</p>${r.demo?'<div class="demo-bar">DEMO · Metadata/placeholder, không phải hồ sơ hoặc ảnh thực tế.</div>':''}`,`<button class="btn" onclick="closeModal()">Đóng</button>${r.evidence?.data?`<button class="btn primary" onclick="downloadFieldEvidence('${r.id}')">Tải minh chứng</button>`:''}`)}
 
 document.getElementById('rolePicker').addEventListener('change',e=>setRole(e.target.value));document.getElementById('globalSearch').addEventListener('keydown',e=>{if(e.key==='Enter'){searchQuery=e.target.value;goto('workpacks')}});document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});render();
+
+/* POS PMS sidebar auto-collapse: does not alter project data or workflows. */
+(() => {
+  const sidebar = document.querySelector('.sidebar');
+  if (!sidebar) return;
+  sidebar.addEventListener('click', (event) => {
+    if (window.matchMedia('(min-width: 581px)').matches && event.target.closest('.nav-item')) {
+      sidebar.classList.add('sidebar-just-selected');
+      if (sidebar.contains(document.activeElement)) document.activeElement.blur();
+    }
+  });
+  sidebar.addEventListener('mouseleave', () => {
+    sidebar.classList.remove('sidebar-just-selected');
+    if (sidebar.contains(document.activeElement)) document.activeElement.blur();
+  });
+})();
 </script>
 </body></html>
