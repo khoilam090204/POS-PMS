@@ -159,6 +159,62 @@
 @media(max-width:480px){.pd-kpis,.pd-tracks,.pd-photos{grid-template-columns:1fr 1fr}.pd-kpi{padding:11px;min-height:104px}.pd-kpi .pd-icon{width:26px;height:26px}.pd-kpi strong{font-size:22px}.pd-hse-numbers{grid-template-columns:1fr 1fr}.pd-hero{padding:20px}.pd-hero h1{font-size:20px}.pd-card-body{padding:12px}.pd-report{padding:12px}.pd-photo-thumb{height:100px}}
 @media(prefers-reduced-motion:reduce){.pd-kpi,.pd-smalllink,.pd-report,.pd-action,.pd-photo{transition:none}}
 
+/* POS PMS v0.4 - executive project dashboard, 2026-10-28 */
+body.pmd-project-mode{--bg:#f3f7fb}
+body.pmd-project-mode .content{max-width:none;padding:17px 21px 32px}
+.pmd-intro{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:11px;flex-wrap:wrap}
+.pmd-crumb{display:flex;align-items:center;gap:8px;min-width:0;font-size:11px;color:#8293aa;font-weight:750}
+.pmd-crumb button{border:0;background:none;color:#2b6caa;font-size:11px;font-weight:800;padding:4px 0}
+.pmd-crumb strong{color:#19366e;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.pmd-date{font-size:10px;border:1px solid #dfebf5;color:#41648d;background:#fff;border-radius:7px;padding:7px 10px;font-weight:800}
+.pmd-ribbon{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:13px 18px;background:linear-gradient(115deg,#f7fbff 0%,#e8f2fb 72%,#e0f0fc 100%);border:1px solid #dbe7f3;border-left:4px solid #24397a;border-radius:10px;margin-bottom:12px}
+.pmd-ribbon h1{font-size:20px;line-height:1.2;color:#172f68;font-weight:900;margin:0 0 4px}
+.pmd-ribbon p{margin:0;color:#5b7495;font-size:11px}.pmd-ribbon em{font-style:normal;color:#8398b0;font-size:10px}
+.pmd-ribbon-right{display:flex;gap:8px;align-items:center;flex-wrap:wrap;justify-content:flex-end}
+.pmd-select{border:1px solid #cbdceb;border-radius:7px;background:#fff;color:#2a4570;padding:8px;font-size:11px;font-weight:750;max-width:240px}
+.pmd-demo{font-size:10px;color:#996c28;background:#fff9ec;border:1px solid #f3e5c5;border-radius:7px;padding:8px 10px;margin-bottom:12px}
+.pmd-kpis{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:9px;margin-bottom:11px}
+.pmd-kpi{border:1px solid #dce7f3;background:#fff;border-radius:9px;padding:12px 13px;display:flex;flex-direction:column;text-align:left;min-width:0;min-height:106px;cursor:pointer;transition:.18s}
+.pmd-kpi:before{content:'';height:3px;background:#2e80c6;display:block;margin:-12px -13px 10px;border-radius:8px 8px 0 0}.pmd-kpi.k-alert:before{background:#e33f49}.pmd-kpi.k-good:before{background:#159a78}
+.pmd-kpi-label{display:flex;align-items:center;gap:5px;color:#415c82;font-size:10px;font-weight:900;text-transform:uppercase;letter-spacing:.15px}.pmd-kpi-label svg{color:#3079b6;flex-shrink:0}
+.pmd-kpi-value{font-size:24px;line-height:1.18;font-weight:900;color:#1c386e;letter-spacing:-.7px;margin:9px 0 5px;white-space:normal;overflow-wrap:anywhere}.pmd-kpi.k-alert .pmd-kpi-value{color:#d83d4c}
+.pmd-kpi-foot{font-size:10px;color:#8195ab;margin-top:auto}
+.pmd-layout{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:10px;margin-bottom:10px}
+.pmd-panel{grid-column:span 4;min-width:0;background:#fff;border:1px solid #dce6f0;border-radius:10px;overflow:hidden;box-shadow:0 2px 11px rgba(24,47,87,.03);cursor:pointer;transition:border-color .15s,box-shadow .15s,transform .15s}
+.pmd-panel.w5{grid-column:span 5}.pmd-panel.w4{grid-column:span 4}.pmd-panel.w3{grid-column:span 3}.pmd-panel.w6{grid-column:span 6}.pmd-panel.w7{grid-column:span 7}.pmd-panel.w8{grid-column:span 8}
+.pmd-panel:hover,.pmd-kpi:hover{border-color:#74b7e2;box-shadow:0 7px 18px rgba(41,98,163,.13);transform:translateY(-1px)}
+.pmd-panel:focus-visible,.pmd-kpi:focus-visible,.pmd-rowbtn:focus-visible,.pmd-photo:focus-visible,.pmd-topback:focus-visible{outline:3px solid #5bcaf4;outline-offset:2px}
+.pmd-panel-h{display:flex;align-items:center;justify-content:space-between;gap:8px;background:#f7faff;border-bottom:1px solid #e8eef6;padding:11px 12px;min-height:40px}
+.pmd-panel-title{display:flex;gap:7px;align-items:center;color:#173a79;font-weight:900;font-size:11px;line-height:1.35;text-transform:uppercase;letter-spacing:.15px}
+.pmd-panel-title svg{width:15px;height:15px;color:#247cc1;flex-shrink:0}
+.pmd-panel-cue{font-size:15px;color:#6b9ec2;line-height:1}
+.pmd-panel-body{padding:10px 12px;min-width:0}
+.pmd-sub{font-size:10px;color:#899aae;margin:0 0 7px}
+.pmd-mini-table{border-collapse:collapse;width:100%;font-size:10px;table-layout:fixed}.pmd-mini-table th{font-size:9px;color:#627995;text-transform:uppercase;text-align:left;background:#f3f7fb;padding:8px 6px;font-weight:850;overflow-wrap:anywhere}.pmd-mini-table td{padding:7px 6px;border-bottom:1px solid #eef2f7;color:#4b607f;overflow-wrap:anywhere}.pmd-mini-table tr:last-child td{border-bottom:0}.pmd-mini-table .strong{font-weight:800;color:#2b4b78}
+.pmd-mini-table td button{font-size:10px}.pmd-rowbtn{border:0;background:transparent;padding:0;color:#2a6aab;text-align:left;font-weight:800;cursor:pointer;max-width:100%;overflow-wrap:anywhere}.pmd-rowbtn:hover{text-decoration:underline}
+.pmd-bar{height:7px;border-radius:9px;overflow:hidden;background:#eaf0f6;min-width:30px}.pmd-bar i{height:100%;display:block;background:linear-gradient(90deg,#246cb5,#61bced);border-radius:9px}.pmd-bar i.negative{background:linear-gradient(90deg,#da4651,#ed9297)}.pmd-bar i.positive{background:linear-gradient(90deg,#1f967a,#5ac7ad)}
+.pmd-loc{display:grid;grid-template-columns:56px minmax(0,1fr) 43px 44px;gap:8px;align-items:center;padding:8px 0;border-bottom:1px solid #eef2f7;font-size:10px}.pmd-loc:last-child{border:0}.pmd-loc b{color:#286ba7}.pmd-loc span:last-child{text-align:right;font-weight:850;color:#4d6485}
+.pmd-hse{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:8px}.pmd-statbox{border:1px solid #e5edf5;border-radius:8px;background:#f8fbfe;padding:10px}.pmd-statbox small{display:block;color:#7a90a9;font-size:9px}.pmd-statbox strong{display:block;color:#173b76;font-size:19px;line-height:1.25;margin:5px 0}.pmd-statbox em{font-size:9px;color:#20a07b;font-style:normal}.pmd-hint{font-size:10px;color:#7891ac;margin-top:8px}
+.pmd-ptw{display:grid;grid-template-columns:92px 1fr;gap:12px;align-items:center}.pmd-ring{width:88px;height:88px;border-radius:50%;display:grid;place-items:center;background:conic-gradient(#2b83c2 0 62%,#189878 62% 82%,#e99b3d 82% 100%)}.pmd-ring div{width:60px;height:60px;border-radius:50%;background:white;display:flex;flex-direction:column;align-items:center;justify-content:center}.pmd-ring strong{font-size:21px;color:#193d76}.pmd-ring small{font-size:9px;color:#8294a9}
+.pmd-ptw-list{display:flex;flex-direction:column;gap:7px}.pmd-ptw-list button{display:flex;justify-content:space-between;gap:8px;align-items:center;background:#f7fbff;border:1px solid #e6eef7;border-radius:6px;padding:7px;font-size:10px;color:#315e90;font-weight:700}
+.pmd-pob{display:grid;grid-template-columns:1fr 1fr;gap:10px}.pmd-pob-value{font-size:32px;color:#173d7d;font-weight:900;line-height:1.2}.pmd-pob-rule{font-size:10px;color:#7188a3}.pmd-pob-num{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}.pmd-smallbox{border:1px solid #e7eef5;background:#f9fbfe;border-radius:6px;padding:8px}.pmd-smallbox small{font-size:9px;color:#7c92ac;display:block}.pmd-smallbox b{font-size:13px;color:#245493}
+.pmd-photo-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px}.pmd-photo{border:1px solid #e1eaf3;border-radius:7px;background:#f5f9fe;padding:0;min-width:0;cursor:pointer;text-align:left;overflow:hidden}.pmd-photo-img{height:80px;display:grid;place-items:center;background:linear-gradient(135deg,#d4e4f1,#aacce7);color:#2a75aa}.pmd-photo-img img{width:100%;height:100%;object-fit:cover;display:block}.pmd-photo span{display:block;font-size:9px;font-weight:800;color:#35577d;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;padding:6px}
+.pmd-report-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px}.pmd-report-item{border:1px solid #dce9f4;border-radius:8px;text-align:center;padding:12px 7px;background:#f8fbfe;cursor:pointer;min-width:0;color:#2471ac}.pmd-report-item strong{display:block;font-size:12px;color:#214a80}.pmd-report-item small{display:block;font-size:9px;color:#758eaa;margin:6px 0}.pmd-report-item svg{margin-bottom:5px}
+.pmd-milestone{display:flex;align-items:start;justify-content:space-between;gap:6px;padding:7px 0;border-bottom:1px solid #eef2f7;font-size:10px}.pmd-milestone:last-child{border:0}.pmd-milestone strong{color:#36537a}.pmd-milestone span{text-align:right;color:#7891ac}
+.pmd-footerline{margin:9px 0 0;font-size:10px;color:#8da1b7}.pmd-footerline strong{color:#315b90}.pmd-section-note{font-size:10px;color:#7b8fa5;line-height:1.45}
+.pmd-topback{display:flex;align-items:center;gap:6px;border:1px solid #d3e3f1;color:#285d98;background:#fff;border-radius:8px;padding:8px 10px;font-weight:800;font-size:11px;white-space:nowrap}
+.pmd-topback:disabled{opacity:.42;cursor:default}
+.pmd-detail-head{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 14px;background:white;border:1px solid #dce7f2;border-radius:9px;margin-bottom:11px;flex-wrap:wrap}
+.pmd-detail-head h2{font-size:15px;color:#203e72;margin:0}.pmd-detail-head p{font-size:10px;color:#7e90a5;margin:4px 0 0}
+.pmd-detail-actions{display:flex;gap:8px;align-items:center}
+@media(max-width:1400px){.pmd-kpis{grid-template-columns:repeat(3,minmax(0,1fr))}.pmd-panel.w3,.pmd-panel.w4{grid-column:span 6}.pmd-panel.w5,.pmd-panel.w7{grid-column:span 6}.pmd-panel.w8{grid-column:span 12}}
+@media(max-width:1000px){.pmd-panel.w3,.pmd-panel.w4,.pmd-panel.w5,.pmd-panel.w6,.pmd-panel.w7,.pmd-panel.w8{grid-column:span 12}.pmd-panel-body{padding:11px}.pmd-ribbon h1{font-size:18px}}
+@media(max-width:600px){body.pmd-project-mode .content{padding:12px}.pmd-kpis{grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}.pmd-kpi{min-height:100px;padding:11px}.pmd-kpi:before{margin:-11px -11px 9px}.pmd-kpi-value{font-size:20px}.pmd-ribbon{padding:11px}.pmd-ribbon-right{width:100%;justify-content:flex-start}.pmd-ribbon h1{font-size:16px}.pmd-photo-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.pmd-report-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.pmd-report-item{padding:8px 4px}.pmd-intro{gap:6px}.pmd-pob{grid-template-columns:1fr}.pmd-hse{grid-template-columns:repeat(2,minmax(0,1fr))}.pmd-hse .pmd-statbox:first-child{grid-column:span 2}}
+.pmd-panel.w12{grid-column:span 12}
+.pmd-photo-img{position:relative}
+
+.pmd-control-action{cursor:pointer;text-align:left}.pmd-control-action:hover{border-color:#87b8da;background:#edf7ff}
+
 </style>
 </head>
 <body><div class="app">
@@ -393,6 +449,109 @@ function pdOverview(){let p=currentProject(),a=projectMetric(p.id),pl=projectMet
 /* Preserve v0.2 specialized pages; replace initial project landing and navigation only. */
 project360 = function(){if(!authorizedProject(activeProject)){return demoNote()+'<div class="p360-empty">Không có quyền xem dự án này.</div>';}let showOverview=projectTab==='overview';return pdHeader()+(showOverview?pdOverview():`<div class="pd-detail-tools"><button class="pd-back" onclick="selectProjectTab('overview')">← Quay về Project Dashboard</button><label><span class="tip">Chuyển phân hệ: </span><select class="pd-select" aria-label="Chuyển phân hệ" onchange="selectProjectTab(this.value)">${P360_TABS.map(([k,n])=>`<option value="${k}" ${projectTab===k?'selected':''}>${escapeHtml(n)}</option>`).join('')}</select></label></div>`+demoNote()+`<div id="p360Body">${({execution:projectExecution,timeline:projectTimeline,reports:projectReports,hse:projectHse,ptw:projectPTW,manpower:projectManpower,photos:projectPhotos,documents:projectDocs,procurement:projectProcurement,financial:projectFinancial,approvals:projectApprovals,audit:projectAudit})[projectTab]?.()||pdOverview()}</div>`)};
 selectProjectTab = function(tab){if(!PD_TAB_TITLES[tab])return;projectTab=tab;page='project360';render();window.scrollTo({top:0,behavior:'smooth'})};
+
+/* POS PMS v0.4: dense per-project dashboard, card navigation, restore-on-reload and back button. */
+const PMD_VIEW_KEY='pos_pms_v04_last_route';
+const PMD_TRAIL_KEY='pos_pms_v04_route_trail';
+const PMD_MODAL_KEY='pos_pms_v04_modal';
+const PMD_SCROLL_KEY='pos_pms_v04_scroll_';
+function pmdRestoreScroll(route){let y=0;try{y=Number(sessionStorage.getItem(PMD_SCROLL_KEY+route)||0)}catch(e){}if(typeof requestAnimationFrame==='function')requestAnimationFrame(()=>requestAnimationFrame(()=>window.scrollTo(0,Number.isFinite(y)?y:0)))}
+const pmdAllowedViews=new Set(['projects','project360','dashboard','workpacks','schedule','report','approvals','resources','quality','reports','audit','settings']);
+let pmdTrail=[];
+let pmdRouting=false;
+const pmdKpiMap={overall:'timeline',variance:'timeline',hse:'hse',pob:'manpower',ptw:'ptw',jobs:'execution'};
+function pmdRoute(){return page==='project360'?'project/'+encodeURIComponent(activeProject)+'/'+encodeURIComponent(projectTab):'view/'+encodeURIComponent(page)}
+function pmdValidRoute(route){if(!route||typeof route!=='string')return null;let v=route.split('/');if(v[0]==='project'&&v.length===3&&PMS_PROJECTS.some(p=>p.id===v[1])&&Object.hasOwn(PD_TAB_TITLES,v[2]))return route;if(v[0]==='view'&&v.length===2&&pmdAllowedViews.has(v[1])&&v[1]!=='project360')return route;return null}
+function pmdRouteHash(route){return '#pms/'+route}
+function pmdHashRoute(){return location.hash.startsWith('#pms/')?pmdValidRoute(decodeURIComponent(location.hash.slice(5))):null}
+function pmdStoreTrail(){try{sessionStorage.setItem(PMD_TRAIL_KEY,JSON.stringify(pmdTrail.slice(-50)))}catch(e){}}
+function pmdRemember(){if(pmdRouting)return;const route=pmdRoute();if(pmdTrail.at(-1)!==route){pmdTrail.push(route);pmdStoreTrail()}try{localStorage.setItem(PMD_VIEW_KEY,route)}catch(e){}if(location.hash!==pmdRouteHash(route))history.pushState({pms:true,route},'',pmdRouteHash(route));pmdUpdateBack()}
+function pmdApplyRoute(route){route=pmdValidRoute(route)||'view/projects';pmdRouting=true;let bits=route.split('/');if(bits[0]==='project'){
+ const [_,id,tab]=bits;
+ if(authorizedProject(id)){activeProject=id;projectTab=tab;page='project360'}else{page='projects';route='view/projects'}
+ }else{let dest=bits[1];page=(role().view.includes('*')||role().view.includes(dest))?dest:'projects'}
+ selectedPack=null;render();pmdRouting=false;try{localStorage.setItem(PMD_VIEW_KEY,pmdRoute())}catch(e){}pmdUpdateBack();return pmdRoute()}
+function pmdStartup(){let stored=null;try{stored=localStorage.getItem(PMD_VIEW_KEY);let t=JSON.parse(sessionStorage.getItem(PMD_TRAIL_KEY)||'[]');if(Array.isArray(t))pmdTrail=t.filter(pmdValidRoute).slice(-50)}catch(e){}let route=pmdHashRoute()||pmdValidRoute(stored)||'view/projects';route=pmdApplyRoute(route);if(!pmdTrail.length||pmdTrail.at(-1)!==route)pmdTrail.push(route);pmdStoreTrail();history.replaceState({pms:true,route},'',pmdRouteHash(route));const savedModal=(()=>{try{return JSON.parse(sessionStorage.getItem(PMD_MODAL_KEY)||'null')}catch(e){return null}})();if(savedModal&&page==='project360'){
+ if(savedModal.kind==='job'&&packBy(savedModal.id)?.projectId===activeProject)job360(savedModal.id);
+ if(savedModal.kind==='record'&&DB.pmsRecords.some(x=>x.id===savedModal.id&&x.projectId===activeProject))viewRecord(savedModal.id)
+ }pmdUpdateBack();pmdRestoreScroll(route)}
+function pmdGoBack(){if(document.getElementById('modalHost')?.firstElementChild){closeModal();return}
+ if(pmdTrail.length>1){pmdTrail.pop();let route=pmdTrail.at(-1);pmdStoreTrail();route=pmdApplyRoute(route);history.replaceState({pms:true,route},'',pmdRouteHash(route));pmdRestoreScroll(route);return}
+ if(page==='project360'&&projectTab!=='overview'){selectProjectTab('overview');return}
+ if(page==='project360'){goto('projects');return}
+ if(page!=='projects'){goto('projects');return}
+}
+function pmdUpdateBack(){let btn=document.getElementById('pmdTopBack');if(btn)btn.disabled=(page==='projects'&&pmdTrail.length<=1)}
+function pmdCardClick(ev,tab){if(ev.target.closest('button,a,select,input,textarea,[data-stop-card]'))return;selectProjectTab(tab)}
+function pmdCardKey(ev,tab){if(ev.target!==ev.currentTarget)return;if(ev.key==='Enter'||ev.key===' '){ev.preventDefault();selectProjectTab(tab)}}
+function pmdPanel(title,tab,body,span='w4',ico='grid'){
+ return `<section class="pmd-panel ${span}" role="link" tabindex="0" aria-label="${escapeAttr(title)}" onclick="pmdCardClick(event,'${tab}')" onkeydown="pmdCardKey(event,'${tab}')"><header class="pmd-panel-h"><span class="pmd-panel-title">${ic(ico,16)} ${escapeHtml(title)}</span><span class="pmd-panel-cue" aria-hidden="true">&#8599;</span></header><div class="pmd-panel-body">${body}</div></section>`
+}
+function pmdKpi(label,value,foot,tab,ico,extra=''){
+ return `<button class="pmd-kpi ${extra}" type="button" onclick="selectProjectTab('${tab}')" aria-label="${escapeAttr(label)}"><span class="pmd-kpi-label">${ic(ico,15)} ${escapeHtml(label)}</span><span class="pmd-kpi-value">${escapeHtml(String(value))}</span><span class="pmd-kpi-foot">${escapeHtml(foot)}</span></button>`
+}
+function pmdHseBlock(){let p=currentProject(),h=pdSafetyHours(),count=pdRecords('hse').length;
+ return `<div class="pmd-hse"><div class="pmd-statbox"><small>Cumulative Safety Manhours</small><strong>${fmt(h)} <span style="font-size:10px">MH</span></strong><em>DEMO snapshot / approved field updates</em></div><div class="pmd-statbox"><small>HSE Submissions</small><strong>${count}</strong><em>Field records</em></div><div class="pmd-statbox"><small>Open PTW snapshot</small><strong>${fmt(p.ptwOpen)}</strong><em>Demo value</em></div></div><div class="pmd-hint">HSE status must be verified against actual DPR and HSE records.</div>`
+}
+function pmdPtwBlock(){let rows=pdRecords('ptw');let p=currentProject();return `<div class="pmd-ptw"><div class="pmd-ring"><div><small>OPEN PTW</small><strong>${fmt(p.ptwOpen)}</strong></div></div><div class="pmd-ptw-list">${rows.slice(0,3).map(r=>`<button data-stop-card="1" type="button" onclick="event.stopPropagation();viewRecord('${r.id}')"><span>${escapeHtml(r.value||r.title)}</span><span aria-hidden="true">&#8599;</span></button>`).join('')||'<span class="pmd-hint">No linked PTW records yet.</span>'}<small class="pmd-hint">Open permits: demo snapshot. Listed permits: linked records.</small></div></div>`}
+function pmdExecutionBlock(){let arr=pdPacks().slice().sort((a,b)=>(pct(a.approved,a.total)-pct(a.planned,a.total))-(pct(b.approved,b.total)-pct(b.planned,b.total))).slice(0,5);
+ return `<table class="pmd-mini-table"><thead><tr><th style="width:42%">Job Card / Activity</th><th>Area</th><th>Actual</th><th>PTW</th></tr></thead><tbody>${arr.map(p=>{let ptw=pdRecords('ptw').filter(r=>r.workpackId===p.id);return `<tr><td><button class="pmd-rowbtn" data-stop-card="1" onclick="event.stopPropagation();job360('${p.id}')">${escapeHtml(p.job)}</button><div class="pmd-sub">${escapeHtml(p.title)}</div></td><td>${escapeHtml(p.location)}</td><td><div class="pmd-bar"><i class="${pct(p.approved,p.total)<pct(p.planned,p.total)?'negative':'positive'}" style="width:${pct(p.approved,p.total).toFixed(1)}%"></i></div><b>${pct(p.approved,p.total).toFixed(0)}%</b></td><td>${ptw.length?`<button data-stop-card="1" class="pmd-rowbtn" onclick="event.stopPropagation();viewRecord('${ptw[0].id}')">${ptw.length} &#8599;</button>`:'--'}</td></tr>`}).join('')}</tbody></table><p class="pmd-footerline">Click a Job Card to open execution steps, linked PTW and documents.</p>`
+}
+function pmdLocationBlock(){let rows=pdLocationData();return `<div class="pmd-sub">Project locations &amp; approved weighted progress (demo)</div>${rows.map(r=>{let variance=r.actual-r.plan;return `<div class="pmd-loc"><b>${escapeHtml(r.location)}</b><div class="pmd-bar"><i class="${variance<0?'negative':'positive'}" style="width:${r.actual.toFixed(1)}%"></i></div><span>${r.actual.toFixed(1)}%</span><span style="color:${variance<0?'#d54a55':'#188e72'}">${variance>=0?'+':''}${variance.toFixed(1)}</span></div>`}).join('')}`}
+function pmdDailyBlock(){let arr=pdPacks().slice(0,5);return `<table class="pmd-mini-table"><thead><tr><th style="width:48%">Workfront / Activity</th><th>Area</th><th>Discipline</th><th>Status</th></tr></thead><tbody>${arr.map(p=>{let progress=pct(p.approved,p.total),variance=progress-pct(p.planned,p.total);return `<tr><td><button class="pmd-rowbtn" data-stop-card="1" onclick="event.stopPropagation();job360('${p.id}')">${escapeHtml(p.title)}</button></td><td>${escapeHtml(p.location)}</td><td>${escapeHtml(p.dept)}</td><td><span class="tag ${variance<-3?'yellow':'green'}">${variance<-3?'Behind':'On plan'}</span></td></tr>`}).join('')}</tbody></table><div class="pmd-hint">Status is derived from simulated weighted quantities, not signed DPR records.</div>`}
+function pmdPobBlock(){let p=currentProject();let d=new Set(pdPacks().map(r=>r.dept));return `<div class="pmd-pob"><div><small class="pmd-sub">Total People on Board</small><div class="pmd-pob-value">${fmt(p.pob)}</div><div class="pmd-pob-rule">Demo snapshot / ${escapeHtml(p.code)}</div></div><div class="pmd-pob-num"><div class="pmd-smallbox"><small>Disciplines</small><b>${d.size}</b></div><div class="pmd-smallbox"><small>Workpacks</small><b>${pdPacks().length}</b></div><div class="pmd-smallbox"><small>Location</small><b>${new Set(pdPacks().map(x=>x.location)).size}</b></div><div class="pmd-smallbox"><small>Manloading</small><b>--</b></div></div></div><p class="pmd-footerline">Detailed allocation / rotation: requires approved manpower source.</p>`}
+function pmdPhotoBlock(){let arr=pdRecords('photo').slice(0,3);return `<div class="pmd-photo-grid">${arr.map(r=>`<button type="button" class="pmd-photo" data-stop-card="1" onclick="event.stopPropagation();viewRecord('${r.id}')"><div class="pmd-photo-img">${r.evidence?.data&&r.evidence.type?.startsWith('image/')?`<img src="${r.evidence.data}" loading="lazy" alt="${escapeAttr(r.title)}">`:`${ic('file',22)}<span style="position:absolute;opacity:.5;font-size:9px">DEMO</span>`}</div><span title="${escapeAttr(r.title)}">${escapeHtml(r.title)}</span></button>`).join('')||'<div class="pmd-sub">No approved field photographs available.</div>'}</div><p class="pmd-footerline">Photos are linked to project, location and Workpack.</p>`}
+function pmdReportBlock(){return `<div class="pmd-report-grid">${[['dpr','DPR','Daily Report'],['wpr','WPR','Weekly Report'],['mpr','MPR','Monthly Report']].map(([kind,code,desc])=>{let r=pdRecords(kind).slice().sort((a,b)=>(b.date||'').localeCompare(a.date||''))[0];return `<button class="pmd-report-item" data-stop-card="1" onclick="event.stopPropagation();${r?`viewRecord('${r.id}')`:`selectProjectTab('reports')`}">${ic('file',21)}<strong>${code}</strong><small>${desc}</small><small>${r?pdFmtDate(r.date):'Not available'}</small></button>`}).join('')}</div>`}
+function pmdDocsBlock(){let rows=pdRecords('document');return `<table class="pmd-mini-table"><thead><tr><th style="width:70%">Document / Drawing</th><th>Revision</th></tr></thead><tbody>${rows.slice(0,4).map(r=>`<tr><td><button data-stop-card="1" class="pmd-rowbtn" onclick="event.stopPropagation();viewRecord('${r.id}')">${escapeHtml(r.title)}</button><div class="pmd-sub">${escapeHtml(r.workpackId||'General')} / ${r.demo?'DEMO':'Approved'}</div></td><td>${escapeHtml(r.value||'--')}</td></tr>`).join('')||'<tr><td colspan="2">No approved document metadata.</td></tr>'}</tbody></table>`}
+function pmdMilestoneBlock(){let p=currentProject();return `<div class="pmd-milestone"><strong>Project Start</strong><span>${pdFmtDate(p.start)} · Baseline</span></div><div class="pmd-milestone"><strong>Next Target: ${escapeHtml(p.next)}</strong><span>Tracking · Demo</span></div><div class="pmd-milestone"><strong>Target Finish</strong><span>${pdFmtDate(p.finish)} · Baseline</span></div><p class="pmd-footerline">P6 logic, forecast finish and critical path are not connected yet.</p>`}
+function pmdMaterialsBlock(){let rows=pdPacks().filter(x=>x.dept==='Procurement');let r=rows[0];return `<div class="pmd-hse"><div class="pmd-statbox"><small>Material Tracking</small><strong>${r?fmt(r.approved):'--'}</strong><em>${r?escapeHtml(r.unit):'No records'}</em></div><div class="pmd-statbox"><small>Planned Quantity</small><strong>${r?fmt(r.planned):'--'}</strong><em>Demo workpack</em></div><div class="pmd-statbox"><small>Pending Delivery</small><strong>--</strong><em>Requires PO source</em></div></div><p class="pmd-footerline">MR, PO, ETA, shortage &amp; site release: upcoming integration.</p>`}
+function pmdShortControls(){return `<div class="pmd-pob-num"><button class="pmd-smallbox pmd-control-action" data-stop-card="1" onclick="event.stopPropagation();selectProjectTab('approvals')"><small>Pending Approvals</small><b>${pdPending()}</b></button><button class="pmd-smallbox pmd-control-action" data-stop-card="1" onclick="event.stopPropagation();selectProjectTab('execution')"><small>Open Constraints</small><b>--</b></button><button class="pmd-smallbox pmd-control-action" data-stop-card="1" onclick="event.stopPropagation();selectProjectTab('financial')"><small>Cost / EAC</small><b>--</b></button><button class="pmd-smallbox pmd-control-action" data-stop-card="1" onclick="event.stopPropagation();selectProjectTab('audit')"><small>Audit Events</small><b>${DB.audit.filter(x=>x.record!=='System').length}</b></button></div><p class="pmd-footerline">Click each tile for its corresponding module. Sensitive financial metrics are not fabricated.</p>`}
+function pmdDashboard(){let p=currentProject(),actual=projectMetric(p.id),planned=projectMetric(p.id,'planned'),diff=actual-planned;
+ return `<div class="pmd-intro"><div class="pmd-crumb"><button type="button" onclick="pmdGoBack()">&#8592; Quay l\u1ea1i</button><span>/</span><button type="button" onclick="goto('projects')">Portfolio</button><span>/</span><strong>${escapeHtml(p.code)}</strong></div><span class="pmd-date">DATA DATE 28/10/2026 / DEMO</span></div>
+ <div class="pmd-ribbon"><div><h1>${escapeHtml(p.name)} / PROJECT DAILY DASHBOARD</h1><p>Integrated Project Controls / Execution / HSE / PTW / Manpower / Reporting</p><em>${escapeHtml(p.scope)}</em></div><div class="pmd-ribbon-right"><select class="pmd-select" aria-label="Select project" onchange="openProject(this.value,'overview')">${PMS_PROJECTS.filter(x=>authorizedProject(x.id)).map(x=>`<option value="${x.id}" ${activeProject===x.id?'selected':''}>${escapeHtml(x.name)}</option>`).join('')}</select></div></div>
+ <div class="pmd-demo">PROTOTYPE / DEMO DATA &#183; Metrics, permits, document records and project progress are simulated or browser-local. Do not use for operational or contractual reporting.</div>
+ <div class="pmd-kpis">${pmdKpi('Approved progress',actual.toFixed(1)+'%','Plan '+planned.toFixed(1)+'%','timeline','chart')}${pmdKpi('Progress variance',(diff>=0?'+':'')+diff.toFixed(1)+' pp','Plan vs approved','timeline','alert',diff<0?'k-alert':'k-good')}${pmdKpi('Safety Manhours',fmt(pdSafetyHours()),'Cumulative MH / demo','hse','shield')}${pmdKpi('POB total',fmt(p.pob),'Manpower snapshot','manpower','users')}${pmdKpi('Open PTW',fmt(p.ptwOpen),'Permit snapshot','ptw','clipboard')}${pmdKpi('Pending approval',pdPending(),'Department / field','approvals','clock','k-alert')}</div>
+ <div class="pmd-layout">
+ ${pmdPanel('S-Curve / Plan vs Actual','timeline',pdProjectCurve(),'w5','chart')}
+ ${pmdPanel('Physical Progress by Location','execution',pmdLocationBlock(),'w3','layers')}
+ ${pmdPanel('Workpack & Job Card Execution','execution',pmdExecutionBlock(),'w4','checklist')}
+ ${pmdPanel('Daily Execution Highlights','execution',pmdDailyBlock(),'w5','briefcase')}
+ ${pmdPanel('HSE / Safety Performance','hse',pmdHseBlock(),'w3','shield')}
+ ${pmdPanel('PTW / SIMOPS','ptw',pmdPtwBlock(),'w4','clipboard')}
+ ${pmdPanel('Manpower / POB','manpower',pmdPobBlock(),'w4','users')}
+ ${pmdPanel('Site Photos / Field Progress','photos',pmdPhotoBlock(),'w4','file')}
+ ${pmdPanel('DPR / WPR / MPR','reports',pmdReportBlock(),'w4','file')}
+ ${pmdPanel('Procurement / Materials Readiness','procurement',pmdMaterialsBlock(),'w4','truck')}
+ ${pmdPanel('Key Milestones / Timeline','timeline',pmdMilestoneBlock(),'w4','calendar')}
+ ${pmdPanel('Documents / Drawings','documents',pmdDocsBlock(),'w4','file')}
+ ${pmdPanel('Approvals / Cost / Audit Control','approvals',pmdShortControls(),'w12','shield')}
+ </div><div class="pmd-section-note">All panels are clickable, including their headings. Direct record rows open the linked Job Card, PTW, photo or document. No real project files are included.</div>`
+}
+const pmdOldGoto=goto;
+goto=function(dest){const before=pmdRoute();pmdOldGoto(dest);if(before!==pmdRoute())pmdRemember()};
+const pmdOldOpenProject=openProject;
+openProject=function(id,tab='overview'){const before=pmdRoute();pmdOldOpenProject(id,tab);if(before!==pmdRoute())pmdRemember()};
+const pmdOldSelectProjectTab=selectProjectTab;
+selectProjectTab=function(tab){const before=pmdRoute();pmdOldSelectProjectTab(tab);if(before!==pmdRoute())pmdRemember()};
+const pmdOldSetRole=setRole;
+setRole=function(id){pmdOldSetRole(id);if(page==='project360'&&!authorizedProject(activeProject)){pmdApplyRoute('view/projects')}pmdRemember()};
+const pmdOldRender=render;
+render=function(){pmdOldRender();document.body.classList.toggle('pmd-project-mode',page==='project360');let top=document.querySelector('.topbar');if(top&&!document.getElementById('pmdTopBack')){let b=document.createElement('button');b.id='pmdTopBack';b.className='pmd-topback';b.textContent='\u2190 Quay l\u1ea1i';b.type='button';b.title='Previous section';b.onclick=pmdGoBack;top.insertBefore(b,top.firstElementChild)}pmdUpdateBack()};
+const pmdOldCloseModal=closeModal;
+closeModal=function(){try{sessionStorage.removeItem(PMD_MODAL_KEY)}catch(e){}pmdOldCloseModal()};
+const pmdOldJob360=job360;
+job360=function(id){pmdOldJob360(id);if(document.getElementById('modalHost')?.firstElementChild){try{sessionStorage.setItem(PMD_MODAL_KEY,JSON.stringify({kind:'job',id}))}catch(e){}}};
+const pmdOldViewRecord=viewRecord;
+viewRecord=function(id){let found=DB.pmsRecords.find(x=>x.id===id);if(!found||found.projectId!==activeProject)return;pmdOldViewRecord(id);if(document.getElementById('modalHost')?.firstElementChild){try{sessionStorage.setItem(PMD_MODAL_KEY,JSON.stringify({kind:'record',id}))}catch(e){}}};
+const pmdOldModal=modal;
+modal=function(title,body,foot){try{sessionStorage.removeItem(PMD_MODAL_KEY)}catch(e){}pmdOldModal(title,body,foot)};
+pdHeader=function(){let p=currentProject();return `<div class="pmd-intro"><div class="pmd-crumb"><button onclick="pmdGoBack()">&#8592; Quay l\u1ea1i</button><span>/</span><button onclick="goto('projects')">Portfolio</button><span>/</span><strong>${escapeHtml(p.name)} / ${escapeHtml(PD_TAB_TITLES[projectTab]||'Project')}</strong></div><span class="pmd-date">PROJECT 360 / DEMO</span></div>`};
+pdOverview=pmdDashboard;
+project360=function(){if(!authorizedProject(activeProject))return demoNote()+'<div class="p360-empty">Project access not available.</div>';if(projectTab==='overview')return pdOverview();let p=currentProject(),fn={execution:projectExecution,timeline:projectTimeline,reports:projectReports,hse:projectHse,ptw:projectPTW,manpower:projectManpower,photos:projectPhotos,documents:projectDocs,procurement:projectProcurement,financial:projectFinancial,approvals:projectApprovals,audit:projectAudit}[projectTab];return pdHeader()+`<div class="pmd-detail-head"><div><h2>${escapeHtml(PD_TAB_TITLES[projectTab]||'Project Module')}</h2><p>${escapeHtml(p.code)} / ${escapeHtml(p.name)}</p></div><div class="pmd-detail-actions"><button class="pmd-topback" onclick="pmdGoBack()">&#8592; Quay l\u1ea1i</button><button class="btn primary" onclick="selectProjectTab('overview')">Dashboard</button><select class="pmd-select" onchange="selectProjectTab(this.value)" aria-label="Switch module">${P360_TABS.map(([k,n])=>`<option value="${k}" ${projectTab===k?'selected':''}>${escapeHtml(n)}</option>`).join('')}</select></div></div>`+demoNote()+`<div id="p360Body">${fn?fn():pdOverview()}</div>`};
+window.addEventListener('popstate',()=>{let route=pmdHashRoute()||'view/projects';let i=pmdTrail.lastIndexOf(route);if(i>=0)pmdTrail=pmdTrail.slice(0,i+1);else pmdTrail.push(route);pmdStoreTrail();pmdApplyRoute(route);pmdRestoreScroll(route)});
+window.addEventListener('hashchange',()=>{let route=pmdHashRoute();if(route&&route!==pmdRoute()){let i=pmdTrail.lastIndexOf(route);if(i>=0)pmdTrail=pmdTrail.slice(0,i+1);else pmdTrail.push(route);pmdStoreTrail();pmdApplyRoute(route);pmdRestoreScroll(route)}});
+window.addEventListener('scroll',()=>{try{sessionStorage.setItem(PMD_SCROLL_KEY+pmdRoute(),String(window.scrollY||0))}catch(e){}},{passive:true});
+pmdStartup();
 
 </script>
 </body></html>
